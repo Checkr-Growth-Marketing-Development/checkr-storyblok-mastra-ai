@@ -18,5 +18,8 @@ export const mastra = new Mastra({
     mcpServers: {
         server: storyblokMcpServer,
     },
+    bundler: {
+        externals: ["@modelcontextprotocol/sdk"],
+    },
     deployer: new NetlifyDeployer(),
 });

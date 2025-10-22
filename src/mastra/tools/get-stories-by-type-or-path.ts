@@ -1,7 +1,6 @@
 import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
-import { StoryblokStoryOutputSchema } from '../../types';
-
+import { StoryblokStoryOutputSchema } from '../utils/types';
 import storyblokClient from '../utils/storyblok/client';
 import getSpaceVersion from '../utils/storyblok/getSpaceVersion';
 

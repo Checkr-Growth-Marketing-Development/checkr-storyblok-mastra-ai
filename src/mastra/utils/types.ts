@@ -1,0 +1,22 @@
+import { z } from 'zod';
+export const StoryblokStoryOutputSchema = z.object({
+    id: z.number(),
+    name: z.string(),
+    slug: z.string(),
+    full_slug: z.string(),
+    content: z.record(z.string(), z.any()).optional(),
+    created_at: z.string(),
+    updated_at: z.string().optional(),
+    published_at: z.string().optional(),
+    first_published_at: z.string().optional(),
+    is_startpage: z.boolean(),
+    parent_id: z.number().nullable().optional(),
+    group_id: z.string().optional(),
+    position: z.number(),
+    tag_list: z.array(z.string()).optional(),
+    is_folder: z.boolean().optional(),
+    content_type: z.string(),
+    uuid: z.string().optional(),
+    path: z.string().nullable().optional(),
+    component: z.string().optional(),
+});

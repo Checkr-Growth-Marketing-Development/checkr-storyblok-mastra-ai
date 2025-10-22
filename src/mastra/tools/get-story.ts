@@ -1,9 +1,10 @@
 import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
-import { StoryblokStoryOutputSchema } from '../../types';
+
 
 import storyblokClient from '../utils/storyblok/client';
 import getSpaceVersion from '../utils/storyblok/getSpaceVersion';
+import {StoryblokStoryOutputSchema} from "../utils/types";
 
 const getStory = async ({ uuid, id, slug, storyVersion }: { uuid?: string ,id?: number, slug?: string, storyVersion?: string | 'draft' | 'published' }) => {
     const params: any = {
@@ -35,6 +36,8 @@ export const getStoryTool = createTool({
         id: z.number().optional().describe("The id of the story to fetch"),
         slug: z.string().optional().describe("The slug of the story to fetch"),
         version: z.string().optional().describe("Weather to fetch draft of published stories (default: published)"),
+    }).refine(data => data.id !== undefined || data.slug !== undefined, {
+        message: "Either id or slug must be provided",
     }),
     outputSchema: StoryblokStoryOutputSchema,
     execute: async ({ context }) => {

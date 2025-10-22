@@ -8,10 +8,6 @@ import {storyblokMcpServer} from "./mcp/storyblok-mcp-server";
 export const mastra = new Mastra({
     workflows: { weatherWorkflow },
     agents: { weatherAgent },
-    // Remove LibSQLStore - not supported in serverless
-    // storage: new LibSQLStore({
-    //   url: ":memory:",
-    // }),
     logger: new PinoLogger({
         name: 'Mastra',
         level: 'info',

@@ -24,8 +24,8 @@
     "@mastra/loggers": "^0.10.17",
     "@mastra/mcp": "^0.14.0",
     "@mastra/memory": "^0.15.8",
-    "storyblok-js-client": "^7.1.5",
-    "zod": "^4.1.12"
+    "zod": "^4.1.12",
+    "storyblok-js-client": "^7.1.5"
   },
   "devDependencies": {
     "@types/node": "^24.9.1",

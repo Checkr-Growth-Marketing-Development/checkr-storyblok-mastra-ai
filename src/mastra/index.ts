@@ -4,8 +4,8 @@ import { PinoLogger } from '@mastra/loggers';
 import { LibSQLStore } from '@mastra/libsql';
 import { weatherWorkflow } from './workflows/weather-workflow';
 import { weatherAgent } from './agents/weather-agent';
-import {testMcpServer} from "./mcp/test-mcp-server";
 import { NetlifyDeployer } from "@mastra/deployer-netlify";
+import {storyblokMcpServer} from "./mcp/storyblok-mcp-server";
 
 export const mastra = new Mastra({
   workflows: { weatherWorkflow },
@@ -18,16 +18,12 @@ export const mastra = new Mastra({
     name: 'Mastra',
     level: 'info',
   }),
-  telemetry: {
-    // Telemetry is deprecated and will be removed in the Nov 4th release
-    enabled: false,
-  },
   observability: {
     // Enables DefaultExporter and CloudExporter for AI tracing
     default: { enabled: true },
   },
     mcpServers: {
-    server: testMcpServer,
+    server: storyblokMcpServer,
     },
     deployer: new NetlifyDeployer(),
 });

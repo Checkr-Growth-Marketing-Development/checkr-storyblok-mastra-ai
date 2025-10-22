@@ -23,7 +23,6 @@
     "@mastra/loggers": "^0.10.17",
     "@mastra/mcp": "^0.14.0",
     "@mastra/memory": "^0.15.8",
-    "ai": "^5.0.76",
     "storyblok-js-client": "^7.1.5",
     "zod": "^4.1.12"
   },

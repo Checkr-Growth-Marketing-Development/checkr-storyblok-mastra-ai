@@ -1,0 +1,11 @@
+[[redirects]]
+from = "/*"
+to = "/.netlify/functions/api/:splat"
+status = 200
+force = true
+
+[context]
+
+[context.production]
+
+[context.main]

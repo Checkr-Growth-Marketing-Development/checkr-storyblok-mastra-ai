@@ -23,5 +23,8 @@ export const mastra = new Mastra({
     mcpServers: {
         storyblokMcpServer
     },
+    bundler: {
+        externals: ["@mastra/deployer-netlify"]
+    },
     deployer: new NetlifyDeployer(),
 });

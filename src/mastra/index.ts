@@ -5,6 +5,8 @@ import { weatherAgent } from './agents/weather-agent';
 import {storyblokMcpServer} from "./mcp/storyblok-mcp-server";
 import { NetlifyDeployer } from "@mastra/deployer-netlify";
 
+const deployer = new NetlifyDeployer();
+
 export const mastra = new Mastra({
     workflows: { weatherWorkflow },
     agents: { weatherAgent },
@@ -23,8 +25,5 @@ export const mastra = new Mastra({
     mcpServers: {
         storyblokMcpServer
     },
-    bundler: {
-        externals: ["@mastra/deployer-netlify"]
-    },
-    deployer: new NetlifyDeployer(),
+    deployer,
 });

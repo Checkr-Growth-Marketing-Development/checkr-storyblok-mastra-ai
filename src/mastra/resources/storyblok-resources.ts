@@ -1,6 +1,6 @@
 import type { MCPServerResources, MCPServerResourceContent, Resource, ResourceTemplate } from '@mastra/mcp';
-import storyblokClient from '../utils/storyblok/client';
-import getSpaceVersion from '../utils/storyblok/getSpaceVersion';
+import storyblokClient from '../../utils/storyblok/client';
+import getSpaceVersion from '../../utils/storyblok/getSpaceVersion';
 
 /**
  * Storyblok MCP Resources

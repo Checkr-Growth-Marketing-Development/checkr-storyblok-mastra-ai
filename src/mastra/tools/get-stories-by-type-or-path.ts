@@ -1,8 +1,8 @@
 import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
-import { StoryblokStoryOutputSchema } from '../utils/types';
-import storyblokClient from '../utils/storyblok/client';
-import getSpaceVersion from '../utils/storyblok/getSpaceVersion';
+import { StoryblokStoryOutputSchema } from '../../utils/types';
+import storyblokClient from '../../utils/storyblok/client';
+import getSpaceVersion from '../../utils/storyblok/getSpaceVersion';
 
 export const getStoriesByTypeOrPathTool = createTool({
     id: "get-stories-by-type-or-path",

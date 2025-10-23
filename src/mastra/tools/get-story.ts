@@ -2,9 +2,9 @@ import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 
-import storyblokClient from '../utils/storyblok/client';
-import getSpaceVersion from '../utils/storyblok/getSpaceVersion';
-import {StoryblokStoryOutputSchema} from "../utils/types";
+import storyblokClient from '../../utils/storyblok/client';
+import getSpaceVersion from '../../utils/storyblok/getSpaceVersion';
+import {StoryblokStoryOutputSchema} from "../../utils/types";
 
 const getStory = async ({ uuid, id, slug, storyVersion }: { uuid?: string ,id?: number, slug?: string, storyVersion?: string | 'draft' | 'published' }) => {
     const params: any = {

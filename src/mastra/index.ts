@@ -3,7 +3,7 @@ import { PinoLogger } from '@mastra/loggers';
 import { weatherWorkflow } from './workflows/weather-workflow';
 import { weatherAgent } from './agents/weather-agent';
 import {storyblokMcpServer} from "./mcp/storyblok-mcp-server";
-import {NetlifyDeployer} from "@mastra/deployer-netlify";
+import { NetlifyDeployer } from "@mastra/deployer-netlify";
 
 export const mastra = new Mastra({
     workflows: { weatherWorkflow },
@@ -12,14 +12,16 @@ export const mastra = new Mastra({
         name: 'Mastra',
         level: 'info',
     }),
+    telemetry: {
+        // Telemetry is deprecated and will be removed in the Nov 4th release
+        enabled: false,
+    },
     observability: {
+        // Enables DefaultExporter and CloudExporter for AI tracing
         default: { enabled: true },
     },
     mcpServers: {
-        server: storyblokMcpServer,
+        storyblokMcpServer
     },
     deployer: new NetlifyDeployer(),
-    bundler: {
-        externals: ['storyblok-js-client', '@mastra/deployer-netlify'],
-    }
 });

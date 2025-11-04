@@ -4,7 +4,7 @@ export const StoryblokStoryOutputSchema = z.object({
     name: z.string(),
     slug: z.string(),
     full_slug: z.string(),
-    content: z.record(z.string(), z.any()).optional(),
+    content: z.record(z.string(), z.any()).nullable().optional(),
     created_at: z.string(),
     updated_at: z.string().optional(),
     published_at: z.string().optional(),
@@ -19,4 +19,12 @@ export const StoryblokStoryOutputSchema = z.object({
     uuid: z.string().optional(),
     path: z.string().nullable().optional(),
     component: z.string().optional(),
+    // Add missing fields from Storyblok API
+    alternates: z.array(z.any()).optional(),
+    default_full_slug: z.string().nullable().optional(),
+    lang: z.string().nullable().optional(),
+    meta_data: z.record(z.string(), z.any()).nullable().optional(),
+    release_id: z.number().nullable().optional(),
+    sort_by_date: z.string().nullable().optional(),
+    translated_slugs: z.array(z.any()).nullable().optional(),
 });

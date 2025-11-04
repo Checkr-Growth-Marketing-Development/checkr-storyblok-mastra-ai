@@ -1,9 +1,9 @@
 import { Agent } from '@mastra/core/agent';
 import { weatherTool } from '../tools/weather-tool';
+import { scorers } from '../scorers/weather-scorer';
 
 export const weatherAgent = new Agent({
   name: 'Weather Agent',
-    description: 'Agent that provides weather information and can help planning activities based on the weather.',
   instructions: `
       You are a helpful weather assistant that provides accurate weather information and can help planning activities based on the weather.
 
@@ -20,4 +20,27 @@ export const weatherAgent = new Agent({
 `,
   model: 'openai/gpt-4o-mini',
   tools: { weatherTool },
+  scorers: {
+    toolCallAppropriateness: {
+      scorer: scorers.toolCallAppropriatenessScorer,
+      sampling: {
+        type: 'ratio',
+        rate: 1,
+      },
+    },
+    completeness: {
+      scorer: scorers.completenessScorer,
+      sampling: {
+        type: 'ratio',
+        rate: 1,
+      },
+    },
+    translation: {
+      scorer: scorers.translationScorer,
+      sampling: {
+        type: 'ratio',
+        rate: 1,
+      },
+    },
+  },
 });

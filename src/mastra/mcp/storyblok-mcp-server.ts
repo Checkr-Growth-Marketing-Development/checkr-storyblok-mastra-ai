@@ -2,9 +2,6 @@ import { MCPServer } from "@mastra/mcp";
 import {getStoriesByTypeOrPathTool} from "../tools/get-stories-by-type-or-path";
 import {storyblokResources} from "../resources/storyblok-resources";
 import {getStoryTool} from "../tools/get-story";
-
-
-
 export const storyblokMcpServer = new MCPServer({
     id: "storyblok-mcp-server",
     name: "Storyblok Server",

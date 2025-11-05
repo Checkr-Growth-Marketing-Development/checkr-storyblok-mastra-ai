@@ -21,7 +21,7 @@
     "@mastra/deployer-netlify": "^0.13.16",
     "@mastra/evals": "^0.14.2",
     "@mastra/loggers": "^0.10.18",
-    "@mastra/mcp": "^0.14.0",
+    "@mastra/mcp": "^0.14.1",
     "@mastra/memory": "^0.15.10",
     "storyblok-js-client": "^7.1.6",
     "zod": "^4.1.12"
